@@ -1,16 +1,22 @@
-# This is a sample Python script.
+import sys
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import pygame
 
+pygame.init()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+SCREEN_WIDTH = 750
+SCREEN_HEIGHT = 780
 
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Space Invaders")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+clock = pygame.time.Clock()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    pygame.display.update()
+    clock.tick(60)
